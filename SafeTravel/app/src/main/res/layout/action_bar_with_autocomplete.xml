@@ -1,16 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="horizontal" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
 <EditText
-    android:layout_width="fill_parent"
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:hint="@string/driver_name_car_number_plate"/>
+    android:layout_centerVertical="true"
+    android:hint="@string/driver_name_car_number_plate"
+    style="@style/EditTextStyle"
+    android:id="@+id/driver_name_car_number_plate" />
 
-    <ImageButton
-        android:layout_width="wrap_content"
+    <Button
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:src="@drawable/abc_ic_search_api_mtrl_alpha"/>
+        android:layout_centerVertical="true"
+        android:text="@string/search"
+        style="@style/ButtonStyle"
+        android:layout_alignBottom="@+id/driver_name_car_number_plate"
+        android:layout_alignTop="@+id/driver_name_car_number_plate"
+        android:layout_toRightOf="@+id/driver_name_car_number_plate" />
 
-</LinearLayout>
+</RelativeLayout>

@@ -3,4 +3,15 @@
     <string name="driver_name_car_number_plate">Driver name/Car number plate</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="title_activity_rate_driver">RateDriverActivity</string>
+    <string name="rateTheDriver"><u>Rate the driver</u></string>
+    <string name="howFastWasTheDriving">How fast was the driving?</string>
+    <string name="howWasTheBehaviour">How was the behavior?</string>
+    <string name="conditionOfTheCar">Condition of the car?</string>
+    <string name="wouldYouRecommendThisDriverToAFriend">Would you recommend this driver to a friend?</string>
+    <string name="additionalDetails">Additional details(We aim to make travel for families secure. Details from you can help us do that)</string>
+    <string name="submitReview">Submit Review</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="search">Search</string>
 </resources>

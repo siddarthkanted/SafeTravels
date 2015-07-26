@@ -5,4 +5,25 @@
         <!-- Customize your theme here. -->
     </style>
 
+    <!--
+    android:background="@color/white"
+    android:textColor="@color/black"
+    android:textSize="15sp"
+    android:padding="4dp" -->
+    <style name="EditTextStyle">
+        <item name="android:background">@color/white</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:padding">4dp</item>
+    </style>
+
+    <!--
+    android:background="@color/material_blue_grey_800"
+    android:textSize="15sp"
+    -->
+    <style name="ButtonStyle">
+        <item name="android:background">@color/material_blue_grey_800</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
 </resources>
