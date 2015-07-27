@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:background="@drawable/rectangle_border">
+
+    <ImageView
+        android:id="@+id/imageOfDriver"
+        android:src="@drawable/safe_trip"
+        style="@style/ImageIconSize"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/driverName"
+        android:id="@+id/driverName"
+        android:layout_toRightOf="@+id/imageOfDriver"
+        style="@style/TextViewStyle"/>
+<Button
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/rateDriver"
+    android:layout_toRightOf="@+id/driverName"
+    android:layout_alignTop="@+id/driverName"
+    android:layout_alignBottom="@+id/driverName"
+    style="@style/ButtonStyle"/>
+
+</RelativeLayout>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:background="@drawable/rectangle_border">
+
+    <ImageView
+        android:id="@+id/imageOfReviewer"
+        android:src="@drawable/safe_trip"
+        style="@style/ImageIconSize"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/nameOfMember"
+        android:id="@+id/nameOfMember"
+        android:layout_toRightOf="@+id/imageOfReviewer"
+        style="@style/TextViewStyle"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/dateOfReview"
+        android:layout_below="@+id/nameOfMember"
+        android:layout_toRightOf="@+id/imageOfReviewer"
+        style="@style/TextViewStyle"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/reviewText"
+        android:id="@+id/reviewText"
+        android:layout_below="@+id/imageOfReviewer"
+        style="@style/TextViewStyle"/>
+
+</RelativeLayout>

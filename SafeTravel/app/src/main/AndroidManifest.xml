@@ -3,10 +3,12 @@
     package="com.microsoft.safetravel" >
 
     <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/safe_trip"
         android:label="@string/app_name"
         android:theme="@android:style/Theme.Holo">
         <receiver android:name=".SmsListener" >

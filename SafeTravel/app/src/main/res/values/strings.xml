@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">SafeTravel</string>
+    <string name="app_name">SafeTrip</string>
     <string name="driver_name_car_number_plate">Driver name/Car number plate</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
@@ -14,4 +14,11 @@
     <string name="yes">Yes</string>
     <string name="no">No</string>
     <string name="search">Search</string>
+    <string name="nameOfMember">Name of Member</string>
+    <string name="dateOfReview">Date of Review</string>
+    <string name="reviewText">Review Text</string>
+    <string name="driverName">Name of Driver</string>
+    <string name="rateDriver">Rate Driver</string>
+    <string name="reviewSubmittedSuccessfully">Review has been submitted successfully</string>
+    <string name="reviewSubmittedFailure">Review submission failed</string>
 </resources>
