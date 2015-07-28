@@ -4,13 +4,13 @@
 
     <uses-permission android:name="android.permission.RECEIVE_SMS" />
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
         android:icon="@drawable/safe_trip"
         android:label="@string/app_name"
-        android:theme="@android:style/Theme.Holo">
+        android:theme="@android:style/Theme.Holo" >
         <receiver android:name=".SmsListener" >
             <intent-filter android:priority="2147483647" >
                 <action android:name="android.provider.Telephony.SMS_RECEIVED" />
@@ -30,6 +30,23 @@
             android:name=".RateDriverActivity"
             android:label="@string/title_activity_rate_driver"
             android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.microsoft.safetravel.MainActivity" />
+        </activity>
+        <activity
+            android:name=".ListOfDriversReviewActivity"
+            android:label="@string/title_activity_list_of_drivers_review"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.microsoft.safetravel.MainActivity" />
+        </activity>
+        <activity
+            android:name=".DriverDetails"
+            android:label="@string/title_activity_driver_details"
+            android:parentActivityName=".MainActivity"
+            android:exported="true">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.microsoft.safetravel.MainActivity" />

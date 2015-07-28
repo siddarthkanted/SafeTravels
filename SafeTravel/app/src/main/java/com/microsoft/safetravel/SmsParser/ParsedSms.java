@@ -2,7 +2,7 @@ package com.microsoft.safetravel.SmsParser;
 
 public class ParsedSms {
     private String serviceName;
-    private String bookingId;
+    private String bookingId; //tripId
     private String bookingTime;
     private String driverName;
     private String driverMobile;

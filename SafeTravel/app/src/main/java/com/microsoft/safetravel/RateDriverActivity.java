@@ -31,27 +31,50 @@ public class RateDriverActivity extends BaseActivity {
         setContentView(R.layout.activity_rate_driver);
     }
 
+    public String getTripId(){
+        Intent intent = getIntent();
+        String tripId=Constant.defaultTripId;
+        if (null != intent) {
+            tripId =  Util.getString(tripId, intent.getStringExtra(Constant.tripId));
+        }
+        return tripId;
+    }
+
+    public String getDriverId(){
+        String driverId = Constant.defaultDriverId;
+        Intent intent = getIntent();
+        if (null != intent) {
+            driverId = Util.getString(driverId, intent.getStringExtra(Constant.driverId));
+        }
+        return driverId;
+    }
+
     public void submitReview(View view) {
         RadioButton fastDrivingRadioButton = (RadioButton)Util.getSelectedRadioButton((RadioGroup)findViewById(R.id.fastDrivingRadioGroup));
         RadioButton behaviourRadioButton = (RadioButton)Util.getSelectedRadioButton((RadioGroup)findViewById(R.id.behaviourRadioGroup));
         RatingBar conditionOfCarRatingBar = (RatingBar)findViewById(R.id.conditionOfCarRatingBar);
-        RadioButton recommendDriverRadioButton = (RadioButton)Util.getSelectedRadioButton((RadioGroup)findViewById(R.id.recommendDriverRadioGroup));
+        RadioButton recommendDriverRadioButton = (RadioButton)Util.getSelectedRadioButton((RadioGroup) findViewById(R.id.recommendDriverRadioGroup));
         EditText aditionalDetailsEditText = (EditText)findViewById(R.id.aditionalDetailsEditText);
         int drivingSpeedRating = Integer.parseInt(fastDrivingRadioButton.getText().toString());
         int driverBehaviorRating = Integer.parseInt(behaviourRadioButton.getText().toString());
         int vehicleConditionRating = (int)(Math.round(conditionOfCarRatingBar.getRating()));
-        boolean driverRecommendation = Boolean.parseBoolean(recommendDriverRadioButton.getText().toString());
+        boolean driverRecommendation = Util.getBoolean(recommendDriverRadioButton.getText().toString());
         String reviewComment = aditionalDetailsEditText.getText().toString();
         Intent intent = getIntent();
-        String reviewerId = "", driverId="", tripId="";
+        String tripId=Constant.defaultTripId;
         if (null != intent) {
-            reviewerId = null != intent.getStringExtra(Constant.reviewerId)? intent.getStringExtra(Constant.reviewerId): UUID.randomUUID().toString();
-            driverId = null != intent.getStringExtra(Constant.driverId)? intent.getStringExtra(Constant.driverId): UUID.randomUUID().toString();
-            tripId = null != intent.getStringExtra(Constant.tripId)? intent.getStringExtra(Constant.tripId): UUID.randomUUID().toString();
+            tripId =  Util.getString(tripId, intent.getStringExtra(Constant.tripId));
         }
-        JSONObject jsonObject = createJson(reviewerId, driverId, tripId, drivingSpeedRating,driverBehaviorRating,vehicleConditionRating, driverRecommendation,reviewComment);
+        JSONObject jsonObject = createJson(tripId, drivingSpeedRating,driverBehaviorRating,vehicleConditionRating, driverRecommendation,reviewComment);
         String url = Constant.apiUrl.concat(Constant.addReviewUrlPath);
         new AddReview(this).execute(url, jsonObject.toString());
+        moveToDriverDetailsPage();
+    }
+
+    public void moveToDriverDetailsPage() {
+        Intent intent = new Intent(this, DriverDetails.class);
+        intent.putExtra(Constant.driverId, getDriverId());
+        startActivity(intent);
     }
 
     /*
@@ -66,11 +89,10 @@ public class RateDriverActivity extends BaseActivity {
     "reviewComment": "this is comment1"
     }
      */
-    public JSONObject createJson(String reviewerId, String driverId, String tripId, int drivingSpeedRating, int driverBehaviorRating,int vehicleConditionRating, boolean driverRecommendation, String reviewComment){
+    public JSONObject createJson(String tripId, int drivingSpeedRating, int driverBehaviorRating,int vehicleConditionRating, boolean driverRecommendation, String reviewComment){
         JSONObject jsonObject = new JSONObject();
         try {
-            jsonObject.put(Constant.reviewerId,reviewerId);
-            jsonObject.put(Constant.driverId, driverId);
+            jsonObject.put(Constant.status,1);
             jsonObject.put(Constant.tripId, tripId);
             jsonObject.put(Constant.drivingSpeedRating,drivingSpeedRating);
             jsonObject.put(Constant.driverBehaviorRating, driverBehaviorRating);

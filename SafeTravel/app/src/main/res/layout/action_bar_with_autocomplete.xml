@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="horizontal" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/lightOrange"
+    >
+
+    <!--
+    <ImageView
+        android:id="@+id/safe_trip_logo"
+        android:src="@drawable/safe_trip"
+        style="@style/ImageIconSize"/> !-->
 
     <EditText
     android:layout_width="wrap_content"
@@ -9,16 +17,19 @@
     android:layout_centerVertical="true"
     android:hint="@string/driver_name_car_number_plate"
     style="@style/EditTextStyle"
-    android:id="@+id/driver_name_car_number_plate" />
+    android:id="@+id/driver_name_car_number_plate"
+        android:ems="12"
+        android:singleLine="true"
+        />
 
     <Button
-        android:layout_width="fill_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
         android:text="@string/search"
         style="@style/ButtonStyle"
-        android:layout_alignBottom="@+id/driver_name_car_number_plate"
-        android:layout_alignTop="@+id/driver_name_car_number_plate"
-        android:layout_toRightOf="@+id/driver_name_car_number_plate" />
+
+        android:layout_toRightOf="@+id/driver_name_car_number_plate"
+        />
 
 </RelativeLayout>

@@ -14,11 +14,25 @@
     <string name="yes">Yes</string>
     <string name="no">No</string>
     <string name="search">Search</string>
+    <string name="unratedTrip">Unrated Trip</string>
     <string name="nameOfMember">Name of Member</string>
     <string name="dateOfReview">Date of Review</string>
     <string name="reviewText">Review Text</string>
     <string name="driverName">Name of Driver</string>
     <string name="rateDriver">Rate Driver</string>
+    <string name="reviews">Reviews</string>
     <string name="reviewSubmittedSuccessfully">Review has been submitted successfully</string>
     <string name="reviewSubmittedFailure">Review submission failed</string>
+    <string name="title_activity_ratings">RatingsActivity</string>
+    <string name="title_activity_list_of_drivers_review">ListOfDriversReviewActivity</string>
+    <string name="driversReviewListUpdatedSuccessfully">Drivers Review List Updated Successfully</string>
+    <string name="title_activity_driver_details">DriverDetails</string>
+    <string name="submit">Submit</string>
+    <string name="licenseNumber">License Number</string>
+    <string name="validity">Validity</string>
+    <string name="contactNumber">Contact Number</string>
+    <string name="policeIdNumber">Police Id Number</string>
+    <string name="notYetRated">You travelled with this driver last on %s. You haven’t rated the driver yet. Do you want to do it now?</string>
+    <string name="numberOfRatings">%s Reviews</string>
+    <string name="numberOfRecommendations">%s people recommend this driver to their friends</string>
 </resources>

@@ -28,7 +28,7 @@ public class AddReview extends AsyncTask<String, Integer, String> {
         try {
             String url = params[0];
             String jsonString = params[1];
-            return HttpUtil.SendHttpPostRequest(url, new JSONObject(jsonString));
+            return HttpUtil.SendHttpPutRequest(url, new JSONObject(jsonString));
         } catch (JSONException e) {
             e.printStackTrace();
         }

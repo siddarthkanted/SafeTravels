@@ -1,3 +1,6 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent" android:layout_height="fill_parent">
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
@@ -12,11 +15,17 @@
         android:layout_height="wrap_content"
         android:text="@string/rateTheDriver"
         android:gravity="center"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/orangeWhite">
 <TextView
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:text="@string/howFastWasTheDriving"
-    android:layout_marginTop="4dp"/>
+    style="@style/TextViewStyle"/>
 
     <RadioGroup
         android:layout_height="wrap_content"
@@ -46,12 +55,17 @@
             android:layout_height="wrap_content"
             android:text="4"/>
     </RadioGroup>
-
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/lightestOrange">
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/howWasTheBehaviour"
-        android:layout_marginTop="4dp"/>
+        style="@style/TextViewStyle"/>
 
     <RadioGroup
         android:layout_height="wrap_content"
@@ -81,12 +95,18 @@
             android:layout_height="wrap_content"
             android:text="4"/>
     </RadioGroup>
+        </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/lighterOrange">
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/conditionOfTheCar"
-        android:layout_marginTop="4dp"/>
+        style="@style/TextViewStyle"/>
 
     <RatingBar
         android:id="@+id/conditionOfCarRatingBar"
@@ -95,12 +115,19 @@
         android:numStars="4"
         android:stepSize="1.0"
         android:rating="2.0" />
+        </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/lightOrange">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/wouldYouRecommendThisDriverToAFriend"
-        android:layout_marginTop="4dp"/>
+        style="@style/TextViewStyle"/>
 
     <RadioGroup
         android:layout_height="wrap_content"
@@ -120,11 +147,19 @@
             android:id="@+id/no"/>
     </RadioGroup>
 
+        </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/orange">
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/additionalDetails"
-        android:layout_marginTop="4dp"/>
+        style="@style/TextViewStyle"/>
 
     <EditText
         android:id="@+id/aditionalDetailsEditText"
@@ -132,13 +167,23 @@
         android:layout_height="wrap_content"
         style="@style/EditTextStyle"
         android:lines="3"/>
+        </LinearLayout>
 
-    <Button
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/darkOrange">
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
         style="@style/ButtonStyle"
-        android:text="@string/submitReview"
-        android:layout_marginTop="4dp"
-        android:onClick="submitReview"/>
+        android:text="@string/submit"
+        android:layout_margin="4dp"
+        android:onClick="submitReview"
+        android:background="@color/darkOrange"
+        android:layout_gravity="right"/>
+        </LinearLayout>
 
 </LinearLayout>
+</ScrollView>

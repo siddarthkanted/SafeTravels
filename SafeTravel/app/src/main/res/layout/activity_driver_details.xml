@@ -1,0 +1,201 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent" android:layout_height="fill_parent">
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="com.microsoft.safetravel.DriverDetails"
+    android:orientation="vertical"
+    android:theme="@android:style/Theme.Holo"
+    android:id="@+id/driverDetailsParent">
+
+ <RelativeLayout
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+     android:background="@color/white"
+     android:padding="4dp">
+
+     <ImageView
+         android:id="@+id/imageOfDriver"
+         android:src="@drawable/default_customer_photo"
+         style="@style/ImageIconSize"/>
+
+     <TextView
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:text="@string/driverName"
+         android:id="@+id/driverName"
+         android:layout_toRightOf="@+id/imageOfDriver"
+         style="@style/BoldTextViewStyle"/>
+
+     <TextView
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:text="@string/numberOfRatings"
+         android:layout_below="@+id/driverName"
+         android:layout_toRightOf="@+id/imageOfDriver"
+         style="@style/TextViewStyle"
+         android:id="@+id/numberOfRatings"/>
+
+     <TextView
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:text="@string/numberOfRecommendations"
+         android:id="@+id/numberOfRecommendations"
+         android:layout_toRightOf="@+id/imageOfDriver"
+         android:layout_below="@+id/numberOfRatings"
+         style="@style/TextViewStyle"
+         />
+
+     <ImageView
+         android:id="@+id/imageOfCard"
+         android:src="@drawable/green_circle"
+         style="@style/ImageIconSize24"
+         android:layout_toRightOf="@+id/driverName"
+         android:layout_marginLeft="14dp"
+      />
+
+ </RelativeLayout>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/licenseNumber"
+            android:id="@+id/licenseNumberTextView"
+            style="@style/TextViewStyle"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/licenseNumber"
+            android:id="@+id/licenseNumberValue"
+            style="@style/BoldTextViewStyle"
+
+            android:layout_toRightOf="@+id/licenseNumberTextView"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/validity"
+            android:id="@+id/validityTextView"
+            style="@style/TextViewStyle"
+            android:layout_below="@+id/licenseNumberTextView"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/validity"
+            android:id="@+id/validityValue"
+            style="@style/BoldTextViewStyle"
+            android:layout_below="@+id/licenseNumberValue"
+            android:layout_toRightOf="@+id/validityTextView"
+
+            android:layout_alignLeft="@+id/licenseNumberValue"
+
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/contactNumber"
+            android:id="@+id/contactNumberTextView"
+            style="@style/TextViewStyle"
+            android:layout_below="@+id/validityTextView"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/contactNumber"
+            android:id="@+id/contactNumberValue"
+            style="@style/BoldTextViewStyle"
+            android:layout_below="@+id/validityValue"
+            android:layout_toRightOf="@+id/contactNumberTextView"
+
+            android:layout_alignLeft="@+id/licenseNumberValue"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/policeIdNumber"
+            android:id="@+id/policeIdNumberTextView"
+            style="@style/TextViewStyle"
+            android:layout_below="@+id/contactNumberTextView"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/policeIdNumber"
+            android:id="@+id/policeIdNumberValue"
+            style="@style/BoldTextViewStyle"
+            android:layout_below="@+id/contactNumberValue"
+            android:layout_toRightOf="@+id/policeIdNumberTextView"
+
+            android:layout_alignLeft="@+id/licenseNumberValue"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/lightBlack"
+        android:padding="4dp"
+        android:id="@+id/lastTravelledDate">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/notYetRated"
+            android:text="@string/notYetRated"
+            style="@style/TextViewStyle"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/rateDriver"
+            style="@style/ButtonStyle"
+            android:layout_below="@+id/notYetRated"
+            android:onClick="moveToRateDriverPage"/>
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:id="@+id/driversReviewListLayout">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/reviews"
+            android:id="@+id/reviewsTextView"
+            style="@style/TextViewStyle"/>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray"
+            android:layout_below="@+id/reviewsTextView"
+            android:id="@+id/lineView"/>
+
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/driversReviewList"
+            android:layout_below="@+id/lineView"></ListView>
+
+    </RelativeLayout>
+
+</LinearLayout>
+</ScrollView>

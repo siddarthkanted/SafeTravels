@@ -1,27 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent" android:layout_height="wrap_content"
-    android:background="@drawable/rectangle_border">
+    android:background="@color/lightOrange"
+    android:padding="4dp"
+    android:orientation="horizontal">
 
     <ImageView
         android:id="@+id/imageOfDriver"
-        android:src="@drawable/safe_trip"
+        android:src="@drawable/default_customer_photo"
         style="@style/ImageIconSize"/>
 
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/driverName"
-        android:id="@+id/driverName"
-        android:layout_toRightOf="@+id/imageOfDriver"
-        style="@style/TextViewStyle"/>
+        android:id="@+id/nameOfDriver"
+        style="@style/BoldTextViewStyle"
+        android:layout_marginLeft="9dp"
+        android:layout_marginBottom="-8dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/numberOfRatings"
+        android:layout_below="@+id/nameOfDriver"
+        android:layout_alignLeft="@+id/nameOfDriver"
+        style="@style/TextViewStyle"
+        android:id="@+id/numberOfRatings"
+        />
+    </RelativeLayout>
+
 <Button
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
+    style="@style/ButtonStyle"
     android:text="@string/rateDriver"
-    android:layout_toRightOf="@+id/driverName"
-    android:layout_alignTop="@+id/driverName"
-    android:layout_alignBottom="@+id/driverName"
-    style="@style/ButtonStyle"/>
+    android:id="@+id/rateDriver"/>
 
-</RelativeLayout>
+    <ImageView
+        android:id="@+id/imageOfCard"
+        android:src="@drawable/green_circle"
+        style="@style/ImageIconSize24"
+        android:layout_marginLeft="14dp"
+        />
+
+</LinearLayout>

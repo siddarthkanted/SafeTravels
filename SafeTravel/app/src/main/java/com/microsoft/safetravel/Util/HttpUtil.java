@@ -27,7 +27,7 @@ public class HttpUtil {
         StringBuffer response = new StringBuffer();
         try {
             int responseCode = httpURLConnection.getResponseCode();
-            if (responseCode == HttpURLConnection.HTTP_OK) {
+            if (HttpURLConnection.HTTP_OK == responseCode || HttpURLConnection.HTTP_NO_CONTENT == responseCode) {
                 BufferedReader in = new BufferedReader(new InputStreamReader(httpURLConnection.getInputStream()));
                 String inputLine;
                 while ((inputLine = in.readLine()) != null) {
@@ -42,6 +42,21 @@ public class HttpUtil {
             e.printStackTrace();
         }
         return response.toString();
+    }
+
+    public static String SendHttpPutRequest(String webUrl, JSONObject postDataParams){
+        try {
+            URL url = new URL(webUrl);
+            HttpURLConnection httpURLConnection = (HttpURLConnection)url.openConnection();
+            httpURLConnection.setRequestMethod("PUT");
+            WriteDataToStream(httpURLConnection, postDataParams);
+            return GetResponse(httpURLConnection);
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
     public static String SendHttpPostRequest(String webUrl, JSONObject postDataParams){

@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent" android:layout_height="wrap_content"
-    android:background="@drawable/rectangle_border">
+    android:background="@drawable/rectangle_border"
+    android:padding="7dp">
 
     <ImageView
         android:id="@+id/imageOfReviewer"
-        android:src="@drawable/safe_trip"
+        android:src="@drawable/default_customer_photo"
         style="@style/ImageIconSize"/>
 
     <TextView
@@ -14,7 +15,9 @@
         android:text="@string/nameOfMember"
         android:id="@+id/nameOfMember"
         android:layout_toRightOf="@+id/imageOfReviewer"
-        style="@style/TextViewStyle"/>
+        style="@style/BoldTextViewStyle"
+        android:layout_marginLeft="9dp"
+        android:layout_marginBottom="-8dp"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -22,7 +25,10 @@
         android:text="@string/dateOfReview"
         android:layout_below="@+id/nameOfMember"
         android:layout_toRightOf="@+id/imageOfReviewer"
-        style="@style/TextViewStyle"/>
+        style="@style/TextViewStyle"
+        android:id="@+id/dateOfReview"
+        android:layout_margin="9dp"
+        />
 
     <TextView
         android:layout_width="wrap_content"
@@ -30,6 +36,8 @@
         android:text="@string/reviewText"
         android:id="@+id/reviewText"
         android:layout_below="@+id/imageOfReviewer"
-        style="@style/TextViewStyle"/>
+        style="@style/TextViewStyle"
+        android:layout_margin="9dp"
+        />
 
 </RelativeLayout>
