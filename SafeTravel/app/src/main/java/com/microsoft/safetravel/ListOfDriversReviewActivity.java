@@ -1,6 +1,9 @@
 package com.microsoft.safetravel;
 
+import android.app.ActionBar;
+import android.app.Activity;
 import android.content.Intent;
+import android.graphics.drawable.ColorDrawable;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -25,7 +28,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class ListOfDriversReviewActivity extends BaseActivity {
+public class ListOfDriversReviewActivity extends Activity {
 
     private String driverId = Constant.defaultDriverId;
 
@@ -33,8 +36,15 @@ public class ListOfDriversReviewActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_of_drivers_review);
+        setActionBar();
         getAllReviewsOfDriver();
+    }
 
+    public void setActionBar(){
+        ActionBar actionBar = getActionBar();
+        actionBar.setDisplayShowHomeEnabled(true);
+        actionBar.setDisplayShowTitleEnabled(true);
+        actionBar.setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.darkOrange)));
     }
 
     public void getAllReviewsOfDriver(){

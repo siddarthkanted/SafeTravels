@@ -16,7 +16,7 @@
         android:id="@+id/nameOfMember"
         android:layout_toRightOf="@+id/imageOfReviewer"
         style="@style/BoldTextViewStyle"
-        android:layout_marginLeft="9dp"
+
         android:layout_marginBottom="-8dp"/>
 
     <TextView
@@ -27,7 +27,8 @@
         android:layout_toRightOf="@+id/imageOfReviewer"
         style="@style/TextViewStyle"
         android:id="@+id/dateOfReview"
-        android:layout_margin="9dp"
+
+        android:layout_marginBottom="-8dp"
         />
 
     <TextView
@@ -37,7 +38,7 @@
         android:id="@+id/reviewText"
         android:layout_below="@+id/imageOfReviewer"
         style="@style/TextViewStyle"
-        android:layout_margin="9dp"
+
         />
 
 </RelativeLayout>

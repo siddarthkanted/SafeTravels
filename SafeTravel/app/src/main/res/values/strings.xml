@@ -24,7 +24,7 @@
     <string name="reviewSubmittedSuccessfully">Review has been submitted successfully</string>
     <string name="reviewSubmittedFailure">Review submission failed</string>
     <string name="title_activity_ratings">RatingsActivity</string>
-    <string name="title_activity_list_of_drivers_review">ListOfDriversReviewActivity</string>
+    <string name="title_activity_list_of_drivers_review">REVIEWS</string>
     <string name="driversReviewListUpdatedSuccessfully">Drivers Review List Updated Successfully</string>
     <string name="title_activity_driver_details">SAFE TRIP</string>
     <string name="submit">Submit</string>
@@ -45,4 +45,5 @@
     <string name="dateOfTrip">Date of Trip</string>
     <string name="noRatedTripFound">No unrated trip found</string>
     <string name="unRatedTripFound">unrated trips found</string>
+    <string name="readAllReviews">Read All Reviews(%s)</string>
 </resources>

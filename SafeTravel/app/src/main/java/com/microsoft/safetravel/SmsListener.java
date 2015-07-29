@@ -45,7 +45,8 @@ public class SmsListener extends BroadcastReceiver {
                         ParsedSms parsedSms = sms.parseSms(msgBody);
                         if(parsedSms != null) {
                             Intent notificationIntent = new Intent(context, DriverDetails.class);
-                            Util.pushNotificationWithOnClick(context, context.getResources().getString(R.string.app_name), getNotificationMessage(context, parsedSms), notificationIntent);
+                          //  Util.pushNotificationWithOnClick(context, context.getResources().getString(R.string.app_name), getNotificationMessage(context, parsedSms), notificationIntent);
+                            Util.pushNotificationWithOnClickMultiline(context, context.getResources().getString(R.string.app_name), getNotificationMessage(context, parsedSms), notificationIntent);
                         }
                     }
                 }catch(Exception e){

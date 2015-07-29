@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
@@ -42,6 +43,7 @@ public class DriverDetails extends Activity {
     private String driverId = Constant.defaultDriverId;
     private String reviewerId = Constant.defaultReviewerId;
     private List<ReviewersTravelWithDriver> reviewersTravelWithDriverList;
+    private DriverProfile driverProfile;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,8 +51,26 @@ public class DriverDetails extends Activity {
         setContentView(R.layout.activity_driver_details);
         setActionBar();
         getDriverProfile();
-        getAllReviewsOfDriver();
+       // getAllReviewsOfDriver();
         getLastTravelledDate();
+
+    }
+
+    public void setReadDriversReviewButton() {
+if(driverProfile.getTotalReviews() > 0){
+    Button button = (Button)findViewById(R.id.readAllReviewsButton);
+    String text = String.format(getResources().getString(R.string.readAllReviews), driverProfile.getTotalReviews());
+    button.setText(text);
+    addDriversReviewListLayout();
+}else{
+    removeDriversReviewListLayout();
+}
+    }
+
+    public void moveToDriverReviews(View view){
+        Intent intent = new Intent(this, ListOfDriversReviewActivity.class);
+        intent.putExtra(Constant.driverId, getDriverId());
+        startActivity(intent);
     }
 
     public void setActionBar(){
@@ -128,7 +148,7 @@ public class DriverDetails extends Activity {
     public void updateDriverProfile(String result){
 
             Gson gson = new Gson();
-            DriverProfile driverProfile = gson.fromJson(result, DriverProfile.class);
+           driverProfile = gson.fromJson(result, DriverProfile.class);
         TextView  textView = (TextView)findViewById(R.id.driverName);
         textView.setText(driverProfile.getDriverName());
         textView = (TextView)findViewById(R.id.licenseNumberValue);
@@ -145,7 +165,7 @@ public class DriverDetails extends Activity {
         textView.setText(String.format(getResources().getString(R.string.numberOfRecommendations), driverProfile.getRecommendationScore()+"%"));
         setImageOfCard(driverProfile);
         setDriverImage(driverProfile);
-
+        setReadDriversReviewButton();
     }
 
     private void setDriverImage(DriverProfile driverProfile) {
@@ -203,8 +223,8 @@ public class DriverDetails extends Activity {
                 List<DriverReview> driverReviewList = gson.fromJson(jsonArray.toString(), listType);
                 Toast.makeText(this, getResources().getString(R.string.driversReviewListUpdatedSuccessfully), Toast.LENGTH_LONG).show();
                 ListOfDriversReviewAdapter listOfDriversReviewAdapter = new ListOfDriversReviewAdapter(this, R.layout.list_of_drivers_review, driverReviewList);
-                ListView listView = (ListView)findViewById(R.id.driversReviewList);
-                listView.setAdapter(listOfDriversReviewAdapter);
+               // ListView listView = (ListView)findViewById(R.id.driversReviewList);
+               // listView.setAdapter(listOfDriversReviewAdapter);
                 addDriversReviewListLayout();
             }
         } catch (JSONException e) {

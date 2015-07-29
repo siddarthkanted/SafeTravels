@@ -5,6 +5,7 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.BitmapFactory;
 import android.support.v7.app.NotificationCompat;
 import android.view.View;
 import android.widget.RadioGroup;
@@ -34,6 +35,34 @@ public class Util {
         PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, notificationIntent, 0);
         notification.setLatestEventInfo(context, notificationTitle, notificationMessage, pendingIntent);
         notificationManager.notify(10001, notification);
+    }
+
+    public static void pushNotificationWithOnClickMultiline(Context context, String notificationTitle, String notificationMessage,  Intent notificationIntent) {
+        int icon = R.drawable.safe_trip;
+
+        int mNotificationId = 001;
+
+        PendingIntent resultPendingIntent =
+                PendingIntent.getActivity(
+                        context,
+                        0,
+                        notificationIntent,
+                        PendingIntent.FLAG_CANCEL_CURRENT
+                );
+
+        NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(
+                context);
+        Notification notification = mBuilder.setSmallIcon(icon).setTicker(notificationTitle).setWhen(0)
+                .setAutoCancel(false)
+                .setContentTitle(notificationTitle)
+                .setStyle(new NotificationCompat.BigTextStyle().bigText(notificationMessage))
+                .setContentIntent(resultPendingIntent)
+                //.setSound(RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION))
+                .setLargeIcon(BitmapFactory.decodeResource(context.getResources(), R.drawable.safe_trip))
+                .setContentText(notificationMessage).build();
+
+        NotificationManager notificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
+        notificationManager.notify(mNotificationId, notification);
     }
 
     public static View getSelectedRadioButton(RadioGroup radioButtonGroup) {

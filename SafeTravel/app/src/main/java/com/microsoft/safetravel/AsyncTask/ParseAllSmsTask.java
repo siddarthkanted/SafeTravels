@@ -94,6 +94,7 @@ public class ParseAllSmsTask extends AsyncTask<String, Integer, String> {
 
         Intent notificationIntent = new Intent(context, UnratedTripsActivity.class);
         notificationIntent.putExtra(Constant.reviewerId, Constant.defaultReviewerId);
-        Util.pushNotificationWithOnClick(context, context.getResources().getString(R.string.app_name), message, notificationIntent);
+       // Util.pushNotificationWithOnClick(context, context.getResources().getString(R.string.app_name), message, notificationIntent);
+        Util.pushNotificationWithOnClickMultiline(context, context.getResources().getString(R.string.app_name), message, notificationIntent);
     }
 }
