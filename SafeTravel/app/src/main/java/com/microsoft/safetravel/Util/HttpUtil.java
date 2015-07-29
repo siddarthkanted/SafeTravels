@@ -2,6 +2,7 @@ package com.microsoft.safetravel.Util;
 
 import android.widget.Toast;
 
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
@@ -74,6 +75,22 @@ public class HttpUtil {
         return null;
     }
 
+    public static String SendHttpPostRequest(String webUrl, JSONArray postDataParams){
+        try {
+            URL url = new URL(webUrl);
+            HttpURLConnection httpURLConnection = (HttpURLConnection)url.openConnection();
+            httpURLConnection.setRequestMethod("POST");
+            WriteDataToStream(httpURLConnection, postDataParams);
+            return GetResponse(httpURLConnection);
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+
 
     public static String SendHttpPostRequest(String webUrl, HashMap<String, String> postDataParams){
         try {
@@ -91,6 +108,19 @@ public class HttpUtil {
     }
 
     public static void WriteDataToStream(HttpURLConnection httpURLConnection, JSONObject postDataParams){
+        try {
+            httpURLConnection.setRequestProperty(Constant.Content_Type, "application/json; charset=UTF-8");
+            OutputStream outputStreams = httpURLConnection.getOutputStream();
+            OutputStreamWriter outputStreamWriter= new OutputStreamWriter(outputStreams);
+            outputStreams.write(postDataParams.toString().getBytes(Constant.UTF_8));
+            outputStreams.close();
+            outputStreamWriter.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void WriteDataToStream(HttpURLConnection httpURLConnection, JSONArray postDataParams){
         try {
             httpURLConnection.setRequestProperty(Constant.Content_Type, "application/json; charset=UTF-8");
             OutputStream outputStreams = httpURLConnection.getOutputStream();

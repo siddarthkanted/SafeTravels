@@ -61,7 +61,7 @@ public class ListOfDriversReviewAdapter extends ArrayAdapter<DriverReview> {
             }
 
             if (nameOfMember != null) {
-                nameOfMember.setText(driverReview.getReviewerId());
+                nameOfMember.setText(driverReview.getReviewerName());
             }
 
             if (dateOfReview != null) {

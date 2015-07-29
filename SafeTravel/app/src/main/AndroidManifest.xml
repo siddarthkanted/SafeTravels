@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.microsoft.safetravel" >
 
+    <uses-permission android:name="android.permission.READ_SMS" />
     <uses-permission android:name="android.permission.RECEIVE_SMS" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -44,10 +45,17 @@
         </activity>
         <activity
             android:name=".DriverDetails"
-            android:label="@string/title_activity_driver_details"
-            android:parentActivityName=".MainActivity"
             android:exported="true"
-           >
+            android:label="@string/title_activity_driver_details"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.microsoft.safetravel.MainActivity" />
+        </activity>
+        <activity
+            android:name=".UnratedTripsActivity"
+            android:label="@string/title_activity_unrated_trips"
+            android:parentActivityName=".MainActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.microsoft.safetravel.MainActivity" />

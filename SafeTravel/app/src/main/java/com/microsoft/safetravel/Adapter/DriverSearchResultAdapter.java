@@ -15,6 +15,7 @@ import com.microsoft.safetravel.AsyncTask.DownloadImageTask;
 import com.microsoft.safetravel.BaseActivity;
 import com.microsoft.safetravel.DriverDetails;
 import com.microsoft.safetravel.Listener.DriverSearchResultOnClickListener;
+import com.microsoft.safetravel.MainActivity;
 import com.microsoft.safetravel.Modal.DriverProfile;
 import com.microsoft.safetravel.Modal.DriverReview;
 import com.microsoft.safetravel.Modal.DriverSearchResult;
@@ -91,7 +92,7 @@ public class DriverSearchResultAdapter extends ArrayAdapter<DriverSearchResult> 
     }
 
     private void moveToRateDriverPage(DriverSearchResult driverSearchResult, LinearLayout linearLayout){
-        BaseActivity baseActivity = Util.as(BaseActivity.class, getContext());
+        MainActivity baseActivity = Util.as(MainActivity.class, getContext());
         linearLayout.setOnClickListener(new DriverSearchResultOnClickListener(driverSearchResult, baseActivity));
     }
 

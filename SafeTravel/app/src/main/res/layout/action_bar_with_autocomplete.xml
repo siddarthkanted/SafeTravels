@@ -10,7 +10,7 @@
         android:id="@+id/safe_trip_logo"
         android:src="@drawable/safe_trip"
         style="@style/ImageIconSize"/> !-->
-
+<!--
     <EditText
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
@@ -31,5 +31,5 @@
 android:onClick="searchDrivers"
         android:layout_toRightOf="@+id/driver_name_car_number_plate"
         />
-
+-->
 </RelativeLayout>

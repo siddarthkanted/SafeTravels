@@ -4,12 +4,14 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.SyncStateContract;
 import android.telephony.SmsMessage;
 
 import  com.microsoft.safetravel.SmsParser.SmsParser;
 import  com.microsoft.safetravel.SmsParser.ISmsParser;
 import  com.microsoft.safetravel.SmsParser.ParsedSms;
 
+import com.microsoft.safetravel.Util.Constant;
 import  com.microsoft.safetravel.Util.Util;
 
 
@@ -17,6 +19,13 @@ import  com.microsoft.safetravel.Util.Util;
  * Created by sikanted on 7/24/2015.
  */
 public class SmsListener extends BroadcastReceiver {
+
+    private String getNotificationMessage(Context context, ParsedSms parsedSms){
+        String message = Constant.notificationMessage;
+        message = String.format(message, "25%", parsedSms.getDriverName(), Util.convertCurrentTimeToDisplayFormat());
+        return message;
+    }
+
     @Override
     public void onReceive(Context context, Intent intent) {
 
@@ -35,7 +44,8 @@ public class SmsListener extends BroadcastReceiver {
                         ISmsParser sms =  new SmsParser();
                         ParsedSms parsedSms = sms.parseSms(msgBody);
                         if(parsedSms != null) {
-                            Util.pushNotificationWithOnClick(context, context.getResources().getString(R.string.app_name), parsedSms.getDriverName(), MainActivity.class);
+                            Intent notificationIntent = new Intent(context, DriverDetails.class);
+                            Util.pushNotificationWithOnClick(context, context.getResources().getString(R.string.app_name), getNotificationMessage(context, parsedSms), notificationIntent);
                         }
                     }
                 }catch(Exception e){
@@ -43,5 +53,7 @@ public class SmsListener extends BroadcastReceiver {
             }
         }
     }
+
+
 }
  

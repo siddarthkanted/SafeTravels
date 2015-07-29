@@ -4,16 +4,39 @@
     android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity"
-    android:theme="@android:style/Theme.Holo"
+    android:paddingBottom="@dimen/activity_vertical_margin"
     android:background="@color/lightOrange"
+    tools:context="com.microsoft.safetravel.MainActivity"
     >
 
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/driver_name_car_number_plate"
+        style="@style/EditTextStyle"
+        android:id="@+id/driver_name_car_number_plate"
+        android:singleLine="true"
+
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/driver_name_car_number_plate"
+        android:layout_alignTop="@+id/driver_name_car_number_plate"
+        android:layout_toEndOf="@+id/driver_name_car_number_plate"
+        android:text="@string/search"
+        style="@style/SearchButtonStyle"
+        android:onClick="searchDriversOnClick"
+        android:layout_toRightOf="@+id/driver_name_car_number_plate"
+        android:id="@+id/driversSearchResultButton"
+        />
 
     <ListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/driversSearchResultList"
+        android:layout_below="@+id/driver_name_car_number_plate"
        ></ListView>
 
 </RelativeLayout>

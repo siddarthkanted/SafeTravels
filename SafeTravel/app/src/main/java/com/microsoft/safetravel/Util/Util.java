@@ -5,6 +5,7 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.support.v7.app.NotificationCompat;
 import android.view.View;
 import android.widget.RadioGroup;
 
@@ -26,10 +27,10 @@ import java.util.List;
  */
 public class Util {
 
-    public static void pushNotificationWithOnClick(Context context, String notificationTitle, String notificationMessage,  Class<?> cls) {
+    public static void pushNotificationWithOnClick(Context context, String notificationTitle, String notificationMessage,  Intent notificationIntent) {
+        //android.support.v4.app.NotificationCompat.BigTextStyle bigTextStyle = new NotificationCompat.BigTextStyle().bigText(notificationMessage);
         NotificationManager notificationManager = (NotificationManager)context.getSystemService(context.NOTIFICATION_SERVICE);
         Notification notification = new Notification(R.drawable.safe_trip, notificationMessage, System.currentTimeMillis());
-        Intent notificationIntent = new Intent(context, cls);
         PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, notificationIntent, 0);
         notification.setLatestEventInfo(context, notificationTitle, notificationMessage, pendingIntent);
         notificationManager.notify(10001, notification);
@@ -57,6 +58,16 @@ public class Util {
             return true;
         }
         return false;
+    }
+
+    public static String convertCurrentTimeToDisplayFormat(){
+        Calendar calendar = Calendar.getInstance();
+        try {
+            SimpleDateFormat sdf = new SimpleDateFormat(Constant.utcTimeFormat);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return new SimpleDateFormat(Constant.displatTimeFormat).format(calendar.getTime()).toString();
     }
 
     public static String convertUtcToDisplayTimeFormat(String utcTime){

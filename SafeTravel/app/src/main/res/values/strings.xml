@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">SafeTrip</string>
+    <string name="app_name">SAFE TRIP</string>
     <string name="driver_name_car_number_plate">Driver name/Car number plate</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
@@ -39,4 +39,10 @@
     <string name="noDriverReviewFound">No driver review found</string>
     <string name="driverReviewsFound">Drivers review obtained successfully</string>
     <string name="driversSearchResultObtained">Drivers search result obtained successfully</string>
+    <string name="unratedTripNotification">You have %s un-rated trips. Would you like to rate them now?</string>
+    <string name="driverNotificationMessage"></string>
+    <string name="title_activity_unrated_trips">UNRATED TRIPS</string>
+    <string name="dateOfTrip">Date of Trip</string>
+    <string name="noRatedTripFound">No unrated trip found</string>
+    <string name="unRatedTripFound">unrated trips found</string>
 </resources>

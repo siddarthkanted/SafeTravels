@@ -36,12 +36,10 @@ public class SearchDriversTask extends AsyncTask<String, Integer, String> {
     @Override
     protected void onPostExecute(String result)
     {
-            BaseActivity baseActivity = Util.as(BaseActivity.class, searchDriversTask);
+        MainActivity baseActivity = Util.as(MainActivity.class, searchDriversTask);
             if(baseActivity != null){
-                Intent intent = new Intent(baseActivity, MainActivity.class);
-                intent.putExtra(Constant.driversSearchResult, result);
-                intent.putExtra(Constant.driverName, driverName);
-                baseActivity.startActivity(intent);
+                //baseActivity.updateDriverNameCarNumberPlateTextView();
+                baseActivity.updateDriversList(result);
             }
     }
 }

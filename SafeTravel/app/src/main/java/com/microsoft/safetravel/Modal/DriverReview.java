@@ -21,6 +21,15 @@ public class DriverReview {
     private String reviewerId;
     private String reviewComment;
     private String driverId;
+    private String reviewerName;
+
+    public String getReviewerName() {
+        return reviewerName;
+    }
+
+    public void setReviewerName(String reviewerName) {
+        this.reviewerName = reviewerName;
+    }
 
     public String getDriverId() {
         return driverId;

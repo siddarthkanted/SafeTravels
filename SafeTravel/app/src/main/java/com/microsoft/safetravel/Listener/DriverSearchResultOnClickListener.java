@@ -6,6 +6,7 @@ import android.view.View;
 
 import com.microsoft.safetravel.BaseActivity;
 import com.microsoft.safetravel.DriverDetails;
+import com.microsoft.safetravel.MainActivity;
 import com.microsoft.safetravel.Modal.DriverSearchResult;
 import com.microsoft.safetravel.Util.Constant;
 import com.microsoft.safetravel.Util.Util;
@@ -30,7 +31,7 @@ public class DriverSearchResultOnClickListener implements View.OnClickListener {
     }
 
     public void moveToDriverDetailsPage() {
-        BaseActivity baseActivity = Util.as(BaseActivity.class, searchDriversTask);
+        MainActivity baseActivity = Util.as(MainActivity.class, searchDriversTask);
         Intent intent = new Intent(baseActivity, DriverDetails.class);
         intent.putExtra(Constant.driverId, driverSearchResult.getDriverId());
         baseActivity.startActivity(intent);

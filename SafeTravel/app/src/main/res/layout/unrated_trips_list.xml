@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+     android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/lightOrange"
+    android:padding="4dp"
+    android:orientation="horizontal">
+
+    <!--
+    imageOfDriver
+    driverName
+    dateOfTrip
+    rateDriver
+    -->
+
+    <ImageView
+        android:id="@+id/imageOfDriver"
+        android:src="@drawable/default_customer_photo"
+        style="@style/ImageIconSize"
+        android:layout_marginTop="-1dp"
+        android:layout_marginLeft="3dp"
+        />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/driverName"
+            android:id="@+id/nameOfDriver"
+            style="@style/BoldTextViewStyle"
+            android:layout_marginLeft="13dp"
+            android:layout_marginBottom="-8dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dateOfTrip"
+            android:layout_below="@+id/nameOfDriver"
+            android:layout_alignLeft="@+id/nameOfDriver"
+            style="@style/TextViewStyle"
+            android:id="@+id/dateOfTrip"
+            />
+    </RelativeLayout>
+
+<Button
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    style="@style/ButtonStyle"
+    android:text="@string/rateDriver"
+    android:id="@+id/rateDriver"/>
+
+
+
+</LinearLayout>
