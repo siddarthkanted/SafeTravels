@@ -3,7 +3,7 @@
     <string name="driver_name_car_number_plate">Driver name/Car number plate</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
-    <string name="title_activity_rate_driver">RateDriverActivity</string>
+    <string name="title_activity_rate_driver">RATE DRVIER</string>
     <string name="rateTheDriver"><u>Rate the driver</u></string>
     <string name="howFastWasTheDriving">How fast was the driving?</string>
     <string name="howWasTheBehaviour">How was the behavior?</string>
@@ -26,7 +26,7 @@
     <string name="title_activity_ratings">RatingsActivity</string>
     <string name="title_activity_list_of_drivers_review">ListOfDriversReviewActivity</string>
     <string name="driversReviewListUpdatedSuccessfully">Drivers Review List Updated Successfully</string>
-    <string name="title_activity_driver_details">DriverDetails</string>
+    <string name="title_activity_driver_details">SAFE TRIP</string>
     <string name="submit">Submit</string>
     <string name="licenseNumber">License Number</string>
     <string name="validity">Validity</string>
@@ -35,4 +35,8 @@
     <string name="notYetRated">You travelled with this driver last on %s. You haven’t rated the driver yet. Do you want to do it now?</string>
     <string name="numberOfRatings">%s Reviews</string>
     <string name="numberOfRecommendations">%s people recommend this driver to their friends</string>
+    <string name="noSearchResultsFound">No search result found</string>
+    <string name="noDriverReviewFound">No driver review found</string>
+    <string name="driverReviewsFound">Drivers review obtained successfully</string>
+    <string name="driversSearchResultObtained">Drivers search result obtained successfully</string>
 </resources>

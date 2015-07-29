@@ -3,7 +3,16 @@
     android:layout_width="match_parent" android:layout_height="wrap_content"
     android:background="@color/lightOrange"
     android:padding="4dp"
-    android:orientation="horizontal">
+    android:orientation="horizontal"
+    android:id="@+id/driverSearchResultLayout">
+
+    <!--
+    imageOfDriver
+    nameOfDriver
+    numberOfRatings
+    rateDriver
+    imageOfCard
+    -->
 
     <ImageView
         android:id="@+id/imageOfDriver"
@@ -32,12 +41,13 @@
         />
     </RelativeLayout>
 
+    <!--
 <Button
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     style="@style/ButtonStyle"
     android:text="@string/rateDriver"
-    android:id="@+id/rateDriver"/>
+    android:id="@+id/rateDriver"/> -->
 
     <ImageView
         android:id="@+id/imageOfCard"

@@ -1,7 +1,9 @@
 package com.microsoft.safetravel;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.drawable.ColorDrawable;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -23,12 +25,20 @@ import org.json.JSONObject;
 import java.util.UUID;
 
 
-public class RateDriverActivity extends BaseActivity {
+public class RateDriverActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rate_driver);
+        setActionBar();
+    }
+
+    public void setActionBar(){
+        ActionBar actionBar = getActionBar();
+        actionBar.setDisplayShowHomeEnabled(true);
+        actionBar.setDisplayShowTitleEnabled(true);
+        actionBar.setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.darkOrange)));
     }
 
     public String getTripId(){
