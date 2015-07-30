@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.provider.SyncStateContract;
 import android.telephony.SmsMessage;
 
+import com.microsoft.safetravel.AsyncTask.ParseAllSmsTask;
 import  com.microsoft.safetravel.SmsParser.SmsParser;
 import  com.microsoft.safetravel.SmsParser.ISmsParser;
 import  com.microsoft.safetravel.SmsParser.ParsedSms;

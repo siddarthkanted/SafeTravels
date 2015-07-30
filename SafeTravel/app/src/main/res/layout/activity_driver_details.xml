@@ -184,7 +184,78 @@
         android:layout_height="wrap_content"
         android:background="@color/white"
         android:id="@+id/driversReviewListLayout"
-        android:visibility="gone">
+        android:paddingRight="8dp"
+        android:visibility="gone"
+        >
+
+        <TextView
+            android:layout_marginBottom="-8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/drivingSpeed"
+            android:id="@+id/drivingSpeedTextView"
+            style="@style/BoldTextViewStyle"
+          />
+
+        <ProgressBar
+            android:layout_marginLeft="44dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            style="@android:style/Widget.ProgressBar.Horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:progress="50"
+            android:max="100"
+            android:id="@+id/speedProgressBar"
+            android:isIndicator="true"
+            android:layout_toRightOf="@+id/drivingSpeedTextView"></ProgressBar>
+
+        <TextView
+            android:layout_marginBottom="-8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/driverBehaviour"
+            android:id="@+id/driverBehaviourTextView"
+            style="@style/BoldTextViewStyle"
+            android:layout_below="@+id/drivingSpeedTextView"
+            android:layout_alignLeft="@+id/drivingSpeedTextView"
+            />
+
+        <ProgressBar
+            android:layout_marginBottom="10dp"
+            style="@android:style/Widget.ProgressBar.Horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:progress="50"
+            android:max="100"
+            android:id="@+id/behaviourProgressBar"
+            android:isIndicator="true"
+            android:layout_toRightOf="@+id/driverBehaviourTextView"
+            android:layout_below="@+id/speedProgressBar"
+            android:layout_alignLeft="@+id/speedProgressBar"></ProgressBar>
+
+        <TextView
+            android:layout_marginBottom="-8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/carCondition"
+            android:id="@+id/carConditionTextView"
+            style="@style/BoldTextViewStyle"
+            android:layout_below="@+id/driverBehaviourTextView"
+            android:layout_alignLeft="@+id/driverBehaviourTextView"
+            />
+
+        <ProgressBar
+            style="@android:style/Widget.ProgressBar.Horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:progress="50"
+            android:max="100"
+            android:id="@+id/conditionProgressBar"
+            android:isIndicator="true"
+            android:layout_toRightOf="@+id/carConditionTextView"
+            android:layout_below="@+id/behaviourProgressBar"
+            android:layout_alignLeft="@+id/behaviourProgressBar"></ProgressBar>
 
         <Button
             android:layout_width="match_parent"
@@ -193,6 +264,7 @@
             style="@style/ButtonStyle"
     android:id="@+id/readAllReviewsButton"
             android:onClick="moveToDriverReviews"
+            android:layout_below="@+id/carConditionTextView"
             />
 
 <!--

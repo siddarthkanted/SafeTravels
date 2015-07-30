@@ -12,6 +12,33 @@ public class DriverProfile {
     private String licenseExpiry;
     private int ratingColor;
     private int recommendationScore;
+    private int drivingSpeedRating;
+    private int driverBehaviorRating;
+    private int vehicleConditionRating;
+
+    public int getDrivingSpeedRating() {
+        return drivingSpeedRating;
+    }
+
+    public void setDrivingSpeedRating(int drivingSpeedRating) {
+        this.drivingSpeedRating = drivingSpeedRating;
+    }
+
+    public int getDriverBehaviorRating() {
+        return driverBehaviorRating;
+    }
+
+    public void setDriverBehaviorRating(int driverBehaviorRating) {
+        this.driverBehaviorRating = driverBehaviorRating;
+    }
+
+    public int getVehicleConditionRating() {
+        return vehicleConditionRating;
+    }
+
+    public void setVehicleConditionRating(int vehicleConditionRating) {
+        this.vehicleConditionRating = vehicleConditionRating;
+    }
 
     public int getRecommendationScore() {
         return recommendationScore;

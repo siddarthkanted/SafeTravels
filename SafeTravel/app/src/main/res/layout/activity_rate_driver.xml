@@ -31,28 +31,41 @@
         android:layout_width="wrap_content"
         android:orientation="horizontal"
         android:checkedButton="@+id/fast_neutral"
-        android:id="@+id/fastDrivingRadioGroup">
+        android:id="@+id/fastDrivingRadioGroup"
+        android:layout_marginLeft="8dp">
         <RadioButton
             android:id="@+id/fast_unsatisfied"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="1" />
+            android:text="1"
+            android:textColor="@color/orangeWhite"
+            android:button="@drawable/rate1_selector"
+            android:layout_marginRight="4dp"
+            />
         <RadioButton
             android:id="@+id/fast_neutral"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="2"
-            android:checked="true"/>
+            android:checked="true"
+            android:textColor="@color/orangeWhite"
+            android:button="@drawable/rate2_selector"
+            android:layout_marginRight="4dp"/>
         <RadioButton
             android:id="@+id/fast_satisfied"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="3"/>
+            android:text="3"
+            android:textColor="@color/orangeWhite"
+            android:button="@drawable/rate3_selector"
+            android:layout_marginRight="4dp"/>
         <RadioButton
             android:id="@+id/fast_extremelySatisfied"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="4"/>
+            android:text="4"
+            android:textColor="@color/orangeWhite"
+            android:button="@drawable/rate4_selector"/>
     </RadioGroup>
     </LinearLayout>
     <LinearLayout
@@ -71,28 +84,40 @@
         android:layout_width="wrap_content"
         android:orientation="horizontal"
         android:checkedButton="@+id/behaviour_neutral"
-        android:id="@+id/behaviourRadioGroup">
+        android:id="@+id/behaviourRadioGroup"
+        android:layout_marginLeft="8dp">
         <RadioButton
             android:id="@+id/behaviour_unsatisfied"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="1" />
+            android:text="1"
+            android:textColor="@color/lightestOrange"
+            android:button="@drawable/rate1_selector"
+            android:layout_marginRight="4dp"/>
         <RadioButton
             android:id="@+id/behaviour_neutral"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="2"
-            android:checked="true"/>
+            android:checked="true"
+            android:textColor="@color/lightestOrange"
+            android:button="@drawable/rate2_selector"
+            android:layout_marginRight="4dp"/>
         <RadioButton
             android:id="@+id/behaviour_satisfied"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="3"/>
+            android:text="3"
+            android:textColor="@color/lightestOrange"
+            android:button="@drawable/rate3_selector"
+            android:layout_marginRight="4dp"/>
         <RadioButton
             android:id="@+id/behaviour_extremelySatisfied"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="4"/>
+            android:text="4"
+            android:textColor="@color/lightestOrange"
+            android:button="@drawable/rate4_selector"/>
     </RadioGroup>
         </LinearLayout>
 

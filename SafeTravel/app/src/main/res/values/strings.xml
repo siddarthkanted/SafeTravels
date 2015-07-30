@@ -45,5 +45,8 @@
     <string name="dateOfTrip">Date of Trip</string>
     <string name="noRatedTripFound">No unrated trip found</string>
     <string name="unRatedTripFound">unrated trips found</string>
+    <string name="drivingSpeed">Driving</string>
+    <string name="driverBehaviour">Behaviour</string>
+    <string name="carCondition">Car Condition</string>
     <string name="readAllReviews">Read All Reviews(%s)</string>
 </resources>
